@@ -52,9 +52,8 @@
 
 -----
 
-## 🛠️ 3. PowerShell Script: MS Forms to SQL Express โดยรวมฟังก์ชันการป้องกัน File Lock และ Options สำหรับการจัดการข้อมูล (NoDup, ForceReplace, Truncate)
+## 🛠️ 3. PowerShell Script: MS Forms to SQL Express
 
-PowerShell Script: MS Forms to SQL Express
 
 ```powershell
 # --- ตั้งค่าเครื่องและไฟล์ ---
@@ -129,17 +128,15 @@ finally {
 ```
 ---
 
-### 📝 คำอธิบายเพิ่มเติมสำหรับ GitHub README:
+### 📝 คำอธิบายเพิ่มเติม
 
 1.  **Column Mapping:** ในสคริปต์มีการใช้ `$row.'Start time'` (ต้องใส่ single quote ครอบชื่อที่มีเว้นวรรค) เพื่อให้อ่านชื่อคอลัมน์ที่ MS Forms สร้างให้อัตโนมัติได้ถูกต้อง
 2.  **SQL Data Types:** แนะนำให้สร้างตารางใน SQL Express โดยใช้ Data Type ดังนี้:
-    *   `FormID`: int (Primary Key)
+    *   `Id`: int (Primary Key)
     *   `StartTime` & `CompletionTime`: datetime
-    *   `Email` & `Name`: nvarchar(255)
+    *   `Email` & `FullName`: nvarchar(255)
     *   `Questions`: nvarchar(max) หรือ nvarchar(500)
 3.  **Security:** สคริปต์ใช้ `Integrated Security=True` (Windows Authentication) ซึ่งปลอดภัยและสะดวกสำหรับการใช้งานภายในเครื่องหรือในโดเมนบริษัท
-
-**คุณต้องการให้ผมร่าง SQL Schema (CREATE TABLE statement) ที่แมปกับหัวตารางในรูปภาพนี้เพื่อเอาไปใส่ใน README.md ด้วยเลยไหมครับ?**
 
 ## ⚠️ ข้อควรระวัง (Tips)
 
@@ -149,8 +146,6 @@ finally {
 
 -----
 ## 🗄️ 4. SQL Server Schema Setup
-
-ก่อนจะรันสคริปต์ PowerShell ให้คุณรันคำสั่ง SQL นี้ใน **SQL Server Management Studio (SSMS)** เพื่อสร้าง Database และ Table รอไว้ครับ:
 
 ```sql
 -- สร้างตารางที่แมปตามหัวข้อใน Excel ของ MS Forms
