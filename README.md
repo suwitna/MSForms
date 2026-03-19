@@ -169,14 +169,18 @@ GO
 
 รัน PowerShell ผ่าน Terminal โดยใส่ Option ตามที่คุณต้องการได้ดังนี้:
 
-**นำเข้าข้อมูลใหม่เท่านั้น (ข้ามตัวที่เคยนำเข้าแล้ว):**
 ```powershell
-.\Sync-SurveyData.ps1
+./Sync-SurveyData.ps1
 ```
+
+
+
 <img width="1074" height="205" alt="image" src="https://github.com/user-attachments/assets/b8b125ee-e175-4fe7-bf3d-9d38ce1d6b46" />
 
 
+
 <img width="862" height="465" alt="image" src="https://github.com/user-attachments/assets/1769fe53-5e45-41fa-ac54-5ef8fb23c532" />
+
 
 
 <img width="820" height="395" alt="image" src="https://github.com/user-attachments/assets/aba3a107-39e1-4c06-9bdb-b6af97d027d3" />
