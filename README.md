@@ -27,17 +27,21 @@
 
 1.  Log-in เข้าสู่ [OneDrive.com](https://onedrive.live.com).
 
-2.  คลิก **+ New (สร้างใหม่)** \> **Excel workbook**. 
+2.  คลิก **+ New (สร้างใหม่)** \> **Excel workbook**.
 <img width="661" height="563" alt="image" src="https://github.com/user-attachments/assets/93b3d26f-055a-4c52-ab78-75d7d177f633" />
+<br/><br/>
 
 3.  เมื่อไฟล์เปิดขึ้นมา ให้ไปที่แถบเมนู **Insert (แทรก)** \> คลิกปุ่ม **Forms** \> **+ New Form**.
 <img width="716" height="405" alt="image" src="https://github.com/user-attachments/assets/5d0f19f8-ee52-48e7-b3d9-a86deaaf98d4" />
+<br/><br/>
 
 4.  ออกแบบคำถามในหน้าต่างที่ปรากฏขึ้น.
 <img width="980" height="800" alt="image" src="https://github.com/user-attachments/assets/7ef3e80b-25ee-403b-9b62-d220de69061f" />
+<br/><br/>
 
 5.  **ผลลัพธ์:** ข้อมูลจาก Form จะถูกส่งมาที่ Sheet ใหม่ (ปกติชื่อ *Form1*) ในไฟล์ Excel นี้.
 <img width="1111" height="160" alt="image" src="https://github.com/user-attachments/assets/6f9c3227-409e-4844-b8e1-1a7fc9a481ce" />
+<br/><br/>
 
 -----
 
@@ -47,12 +51,15 @@
 
 1.  เปิดโปรแกรม **OneDrive** บนคอมพิวเตอร์และ Log-in บัญชีเดียวกับที่สร้างไฟล์.
 <img width="1032" height="359" alt="image" src="https://github.com/user-attachments/assets/aa2552e0-e7df-46fa-b07a-9ebbb3a99689" />
+<br/><br/>
 
 2.  รอให้ไฟล์ Excel ปรากฏใน Folder OneDrive บนเครื่อง.
 <img width="847" height="349" alt="image" src="https://github.com/user-attachments/assets/5d96ba83-0e79-4b35-b45f-2f821dce32c2" />
+<br/><br/>
 
 3.  **สำคัญ:** คลิกขวาที่ไฟล์นั้น แล้วเลือก **"Always keep on this device"** เพื่อให้ไฟล์พร้อมใช้งานแบบ Offline เสมอ และ PowerShell สามารถเข้าถึงได้ตลอดเวลา.
-<img width="746" height="335" alt="image" src="https://github.com/user-attachments/assets/1d9a3215-aa52-4950-8eaf-60d66a5b0882" />
+<br/><img width="746" height="335" alt="image" src="https://github.com/user-attachments/assets/1d9a3215-aa52-4950-8eaf-60d66a5b0882" />
+<br/><br/>
 
 -----
 
@@ -175,25 +182,44 @@ GO
 
 ---
 
-## 🚀 วิธีการใช้งาน (Usage)
+## 🚀 Test script
+### 1: ทำการคัดลอกไฟล์  SurveyDataForms.xlsx ไปวางที่ D:\SSRS\2569\5\
 
-รัน PowerShell ผ่าน Terminal โดยใส่ Option ตามที่คุณต้องการได้ดังนี้:
+<img width="707" height="277" alt="image" src="https://github.com/user-attachments/assets/447be196-e093-4537-b46b-2913e0c544bf" />
+<br/><br/>
+
+<img width="1074" height="205" alt="image" src="https://github.com/user-attachments/assets/b8b125ee-e175-4fe7-bf3d-9d38ce1d6b46" />
+
+```bat
+D:\SSRS\2569\5\SurveyDataForms.xlsx
+```
+
+### 2: รัน PowerShell ผ่าน Terminal โดยใส่ Option ตามที่คุณต้องการได้ดังนี้:
 
 ```powershell
 ./Sync-SurveyData.ps1
 ```
+หรือ
 
-
-
-<img width="1074" height="205" alt="image" src="https://github.com/user-attachments/assets/b8b125ee-e175-4fe7-bf3d-9d38ce1d6b46" />
-
+```ps
+powershell.exe -ExecutionPolicy Bypass -File "D:\SSRS\2569\5\Sync-SurveyData.ps1"
+```
 
 
 <img width="862" height="465" alt="image" src="https://github.com/user-attachments/assets/1769fe53-5e45-41fa-ac54-5ef8fb23c532" />
-
-
+<br/><br/>
 
 <img width="820" height="395" alt="image" src="https://github.com/user-attachments/assets/aba3a107-39e1-4c06-9bdb-b6af97d027d3" />
+
+---
+
+## ตัวอย่าง SQL Agent Job
+
+
+<img width="441" height="412" alt="image" src="https://github.com/user-attachments/assets/8ad14848-d0d1-4029-8564-7fdb3001e05c" />
+<br/><br/>
+
+<img width="466" height="410" alt="image" src="https://github.com/user-attachments/assets/fe9f726c-cd48-4afe-8cc7-f8feb399af86" />
 
 ---
 
