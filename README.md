@@ -2,6 +2,9 @@
 
 ตัวอย่าง Data Pipeline แบบ Low-code โดยใช้ Microsoft Forms เป็นตัวรับข้อมูล, OneDrive เป็นตัวกลางในการ Sync ไฟล์ Excel ลงเครื่อง PC และใช้ PowerShell ในการ ETL ข้อมูลเข้าสู่ MS SQL Server Express
 
+
+<img width="1784" height="767" alt="image" src="https://github.com/user-attachments/assets/7172bf09-63c7-4372-87be-d01f99ef69f0" />
+
 -----
 
 ## 📂 1. การสร้างไฟล์ Excel เชื่อมกับ MS Forms
@@ -23,17 +26,18 @@
 ต้องสร้างไฟล์ Excel ก่อนแล้วค่อย "ฝัง" Form ลงไป
 
 1.  Log-in เข้าสู่ [OneDrive.com](https://onedrive.live.com).
-2.  คลิก **+ New (สร้างใหม่)** \> **Excel workbook**.<img width="661" height="563" alt="image" src="https://github.com/user-attachments/assets/93b3d26f-055a-4c52-ab78-75d7d177f633" />
 
+2.  คลิก **+ New (สร้างใหม่)** \> **Excel workbook**. 
+<img width="661" height="563" alt="image" src="https://github.com/user-attachments/assets/93b3d26f-055a-4c52-ab78-75d7d177f633" />
 
-3.  เมื่อไฟล์เปิดขึ้นมา ให้ไปที่แถบเมนู **Insert (แทรก)** \> คลิกปุ่ม **Forms** \> **+ New Form**.<img width="716" height="405" alt="image" src="https://github.com/user-attachments/assets/5d0f19f8-ee52-48e7-b3d9-a86deaaf98d4" />
+3.  เมื่อไฟล์เปิดขึ้นมา ให้ไปที่แถบเมนู **Insert (แทรก)** \> คลิกปุ่ม **Forms** \> **+ New Form**.
+<img width="716" height="405" alt="image" src="https://github.com/user-attachments/assets/5d0f19f8-ee52-48e7-b3d9-a86deaaf98d4" />
 
+4.  ออกแบบคำถามในหน้าต่างที่ปรากฏขึ้น.
+<img width="980" height="800" alt="image" src="https://github.com/user-attachments/assets/7ef3e80b-25ee-403b-9b62-d220de69061f" />
 
-4.  ออกแบบคำถามในหน้าต่างที่ปรากฏขึ้น.<img width="980" height="800" alt="image" src="https://github.com/user-attachments/assets/7ef3e80b-25ee-403b-9b62-d220de69061f" />
-
-
-5.  **ผลลัพธ์:** ข้อมูลจาก Form จะถูกส่งมาที่ Sheet ใหม่ (ปกติชื่อ *Form1*) ในไฟล์ Excel นี้.<img width="1111" height="160" alt="image" src="https://github.com/user-attachments/assets/6f9c3227-409e-4844-b8e1-1a7fc9a481ce" />
-
+5.  **ผลลัพธ์:** ข้อมูลจาก Form จะถูกส่งมาที่ Sheet ใหม่ (ปกติชื่อ *Form1*) ในไฟล์ Excel นี้.
+<img width="1111" height="160" alt="image" src="https://github.com/user-attachments/assets/6f9c3227-409e-4844-b8e1-1a7fc9a481ce" />
 
 -----
 
@@ -41,19 +45,25 @@
 
 เพื่อให้ PowerShell อ่านไฟล์ได้ คุณต้อง Sync ไฟล์จาก Cloud ลงมาที่ Disk:
 
-1.  เปิดโปรแกรม **OneDrive** บนคอมพิวเตอร์และ Log-in บัญชีเดียวกับที่สร้างไฟล์.<img width="1032" height="359" alt="image" src="https://github.com/user-attachments/assets/aa2552e0-e7df-46fa-b07a-9ebbb3a99689" />
+1.  เปิดโปรแกรม **OneDrive** บนคอมพิวเตอร์และ Log-in บัญชีเดียวกับที่สร้างไฟล์.
+<img width="1032" height="359" alt="image" src="https://github.com/user-attachments/assets/aa2552e0-e7df-46fa-b07a-9ebbb3a99689" />
 
+2.  รอให้ไฟล์ Excel ปรากฏใน Folder OneDrive บนเครื่อง.
+<img width="847" height="349" alt="image" src="https://github.com/user-attachments/assets/5d96ba83-0e79-4b35-b45f-2f821dce32c2" />
 
-2.  รอให้ไฟล์ Excel ปรากฏใน Folder OneDrive บนเครื่อง.<img width="847" height="349" alt="image" src="https://github.com/user-attachments/assets/5d96ba83-0e79-4b35-b45f-2f821dce32c2" />
-
-
-3.  **สำคัญ:** คลิกขวาที่ไฟล์นั้น แล้วเลือก **"Always keep on this device"** เพื่อให้ไฟล์พร้อมใช้งานแบบ Offline เสมอ และ PowerShell สามารถเข้าถึงได้ตลอดเวลา.<img width="746" height="335" alt="image" src="https://github.com/user-attachments/assets/1d9a3215-aa52-4950-8eaf-60d66a5b0882" />
-
+3.  **สำคัญ:** คลิกขวาที่ไฟล์นั้น แล้วเลือก **"Always keep on this device"** เพื่อให้ไฟล์พร้อมใช้งานแบบ Offline เสมอ และ PowerShell สามารถเข้าถึงได้ตลอดเวลา.
+<img width="746" height="335" alt="image" src="https://github.com/user-attachments/assets/1d9a3215-aa52-4950-8eaf-60d66a5b0882" />
 
 -----
 
 ## 🛠️ 3. PowerShell Script: MS Forms to SQL Express
 
+*   คำสั่ง Import-Excel ซึ่งไม่ได้ติดมากับ Windows ต้องลงเพิ่มผ่าน PowerShell (Run as Administrator):
+
+```powershell
+# ติดตั้ง Module สำหรับอ่านไฟล์ Excel โดยไม่ต้องมีโปรแกรม Excel ในเครื่อง
+Install-Module -Name ImportExcel -Force -Scope CurrentUser
+```
 
 ```powershell
 # --- ตั้งค่าเครื่องและไฟล์ ---
